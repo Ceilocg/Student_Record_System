@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
+    
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+        <!-- Log Out Button -->
+        <a href="{% url 'index' %}" class="btn btn-danger logout-button">Log Out</a>
+    </header>
+
+    <div class="container settings-container">
+        <!-- Timezone & Date Format -->
+        <div class="card">
+            <div class="card-body">
+                <h2 class="section-title">Timezone & Date Format</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="timezone">Timezone</label>
+                        <select id="timezone" class="form-control">
+                            <option value="UTC">UTC</option>
+                            <option value="America/New_York">Philippines</option>
+                            <option value="Europe/London">Europe/London</option>
+                            <!-- Add more timezones as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date-format">Date Format</label>
+                        <select id="date-format" class="form-control">
+                            <option value="mm/dd/yyyy">MM/DD/YYYY</option>
+                            <option value="dd/mm/yyyy">DD/MM/YYYY</option>
+                            <option value="yyyy-mm-dd">YYYY-MM-DD</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h2 class="section-title">Contact Information</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="support-email">Support Email</label>
+                        <input type="email" id="support-email" class="form-control" placeholder="support@school.edu">
+                    </div>
+                    <div class="form-group">
+                        <label for="support-phone">Support Phone</label>
+                        <input type="tel" id="support-phone" class="form-control" placeholder="+63 999 123 5467">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-address">Contact Address</label>
+                        <textarea id="contact-address" class="form-control" rows="3" placeholder="123 School Street, City, Country"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Language Settings -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h2 class="section-title">Language Settings</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="default-language">Default Language</label>
+                        <select id="default-language" class="form-control">
+                            <option value="en">English</option>
+                            <option value="es">Filipino</option>
+                            <option value="fr">French</option>
+                            <!-- Add more languages as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-multiple-languages">Support Multiple Languages</label>
+                        <select id="support-multiple-languages" class="form-control" multiple>
+                            <option value="en">English</option>
+                            <option value="es">Filipino</option>
+                            <option value="fr">French</option>
+                            <!-- Add more languages as needed -->
+                        </select>
+                        <small class="form-text text-muted">Hold Ctrl (or Command) to select multiple languages.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

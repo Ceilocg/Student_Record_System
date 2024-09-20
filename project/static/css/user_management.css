@@ -1,0 +1,249 @@
+/* Global Styles */
+body {
+    background: linear-gradient(white, rgba(145, 45, 93, 0.96));
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center; /* Vertically centers the logo and the heading */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 50px; /* Adjust size as needed */
+    margin-right: 15px; /* Space between logo and title */
+}
+
+h1 {
+    font-size: 24px;
+    color: maroon;
+    margin: 0;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 20px 20px; /* Adjusted top margin for header */
+    width: 100%;
+    max-width: 1200px; /* Adjust max-width as needed */
+}
+
+/* Form Styles */
+.form-container {
+    flex: 1;
+    padding: 20px;
+    max-width: 48%;
+}
+
+#addUserForm {
+    background-color: #ffffff33;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid #e1e1e172;
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+    align-items: stretch; /* Stretch form elements to full width */
+}
+
+form {
+    width: 100%;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #cccccc97;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.388);
+    margin-bottom: 15px; /* Add spacing between fields */
+}
+
+form .form-group label {
+    font-weight: bold;
+    color: maroon;
+    margin-bottom: 5px;
+}
+
+.alert.alert-danger {
+    background-color: #ffdddd;
+    color: #d8000c;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+}
+
+.btn-primary {
+    background-color: rgba(145, 45, 93, 0.96);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #ec3eb877;
+    
+}
+
+/* User List Table */
+.existing-content {
+    flex: 1;
+    padding: 20px;
+    max-width: 48%;
+}
+
+/* Style for help text below form fields */
+.form-text {
+    font-size: 12px; /* Adjust the size of the help text */
+    color:#ec3eb877; /* A muted color, similar to Bootstrap's 'text-muted' */
+    margin-top: -5px; /* Adjust spacing above the help text */
+    margin-bottom: 15px; /* Adjust spacing below the help text */
+}
+
+/* Override if you want a more distinct look */
+.text-muted {
+    color: rgba(108, 117, 125, 0.8); /* Muted gray */
+}
+
+/* Optional: Adjust spacing and appearance for error messages */
+.alert.alert-danger {
+    background-color: #ffdddd;
+    color: #d8000c;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px; /* Match the size of the help text for consistency */
+    margin-bottom: 20px;
+}
+
+/* Form group styling to ensure proper spacing between label, input, and help text */
+.form-group {
+    margin-bottom: 10px; /* Space between form fields */
+}
+
+
+h2 {
+    color: maroon;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff5b;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0; /* Removed margin */
+}
+
+table thead {
+    background-color: rgba(145, 45, 93, 0.96);
+    color: #fff;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    font-size: 16px;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Buttons for Actions */
+.btn-update, .btn-delete {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 2px;
+    border: none;
+
+}
+
+.btn-update {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-update:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    background-color: grey;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form-container, .existing-content {
+        max-width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 22px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    table, table th, table td {
+        font-size: 14px;
+    }
+
+    .btn-update, .btn-delete {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}

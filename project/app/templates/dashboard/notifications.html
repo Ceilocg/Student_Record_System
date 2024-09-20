@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Requests</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/user_management.css' %}">
+</head>
+<body>
+    <div class="notification-container">
+        <div class="notification-header">
+            <h1>Submitted Certificate Requests</h1>
+        </div>
+        <div class="notification-content">
+            <table class="notification-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>LRN</th>
+                        <th>Certificate Type</th>
+                        <th>Request Purpose</th>
+                        <th>Date Submitted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for request in requests %}
+                    <tr>
+                        <td>{{ request.name }}</td>
+                        <td>{{ request.email }}</td>
+                        <td>{{ request.lrn }}</td>
+                        <td>{{ request.certificate_type }}</td>
+                        <td>{{ request.request_purpose }}</td>
+                        <td>{{ request.submitted_at }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center">No requests submitted yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
